@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to setup Git sync SSH with Obsidian</title>
+</head>
+<body>
+
+<hr size="10" color="black">
+<h1> How to setup Git sync SSH with Obsidian </h1>
+<hr size="10" color="black">
+
+<em> Before going forward this guide will be following a linux setup but can be followed on windows by using the git terminal </em> <br>
+<strong> The following must be installed</strong> 
+
+<ul>  
+    <li> git </li>
+    <li> obsidian </li>
+    <li> openssh </li>
+</ul>
+
+<hr>
+
+    <h2> Step 1: Generating an SSH key </h2>
+    <hr align="left" width="500" size="5" color="black">
+
+    <p><strong><em> here is what you can follow if you get lost:</em></strong> <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank"> Generate a github SSH key </a> <br>
+        <br>
+    <strong> 1: Generating the SSH key </strong>
+    <pre><code> ssh-keygen -t ed25519 -C "your_email@example.com"</code></pre>
+    <ul>
+    <li>Next we are prompted to save the key somewhere, I like to just leave it how it is and press enter. <br> </li>
+    <li>You will then be asked for a passphrase, I also leave this blank but be careful as this is a security concern. <br> </li> </ul>
+
+    <h3><strong> 2: Start the ssh-agent in the background </strong></h3>
+    
+    <pre><code> eval "$(ssh-agent -s)" </code></pre>
+
+    <strong> 3: Add your SSH private key to the ssh-agent. </strong>
+
+    <pre><code> ssh-add ~/.ssh/id_ed25519</code></pre>
+    
+    Lastly add your public SSH key to yout github account, if you dont know how to do that follow this link: <strong><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" target="_blank"> Add SSH key to github account</a></strong>
+    </p>
+
+    <h2> Step 2: Creating and cloning the repository </h2>
+    <hr width="500" align="left" size="5" color="black">
+    
+    <p> <strong> 1: Make a repository in github and make sure to add a <em> README </em></strong><br>
+    <br>
+    <strong> 2: Now on github copy the repository by SSH </strong><br>
+    <br>
+    <strong> 3: In your terminal, CD into a folder where you want to have the repository, I like to use documnets. </strong><br>
+    <br>
+    <strong> 4: Next we will git clone the SSH url we copied above </strong></p>
+
+    <h2> Step 3: Obsidian </h2>
+    <hr width="500" align="left" size="5" color="black">
+    <p> <strong> 1: Open obsidian and open the repository you cloned </strong> <br>
+    <br>
+    <strong> 2: Install the community plugin GIT and enable it there are 2 things you need to change/enable 2 settings. </strong>
+        
+        <ul>
+            <li> Change the "Auto commit-and-sync interval (minutes)" to 1 minute </li>
+            <li> Enable the pull on startup setting further down </li>
+        </ul>
+
+    <strong> 3: Now this step is important if you want to open these notes from another device. </strong> <br>
+    
+    <ol>
+        <li> Open github or the terminal and make a ".gitignore" file</li>
+        <li> Go into the file and add ".obsidian/workspace.json"</li>
+    </ol>
+    this is important as syncing some of these settings may not work properly on diffrent devices <br><br>
+
+    <strong> 4: Now if you see any errors when trying to sync or pull on a diffrent device it may be becasue your .gitconfig isnt set properly. Run the commands below and use your githib credentials. </strong><br>
+    <ul>
+        <li> git config --global user.email "your-email@example.com"</li>
+        <li> git config --global user.name "Your Name" </li>
+    </ul>
+    </p>
+
+</body>
+</html>
