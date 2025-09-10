@@ -6,5 +6,3 @@ value1 = 139 # integer that takes 4 bytes in RAM
 value2 = -26 # 
 sum1 = value1 + value2 #sum1 is a variable
 print("The sum of", value1, "and", value2, "is", sum1)
-
-
