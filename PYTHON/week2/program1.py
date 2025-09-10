@@ -1,6 +1,6 @@
 # in python variables can take intgers (integers cannot have decimals) or floats (floats can have decimals)
 
-# integer that takes 4 bytes in RAM
+# integers takes 4 bytes in RAM
 
 value1 = 139 
 value2 = -26 
