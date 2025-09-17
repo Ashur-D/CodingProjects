@@ -1,3 +1,5 @@
+# 9/16/2025
+
 '''
 write a python program that
 demostrated using spe and end functions
@@ -16,5 +18,5 @@ print("Job title", "professor", sep="|")
 print("School name", "FAST", sep=":")
 print("Welcome to the school of FAST", end="*******") # adding something between the end strings removes the new line
 print( "read", "karim", sep="") # by default sep will remove space
-print( "read", "karim", end="\n")
+print( "read", "karim", end="\n") # This will create a new line, by default end will end the line.
 print(456,900,10875, sep='#')
