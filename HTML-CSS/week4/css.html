@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Cascading style sheets - basics</title>
+
+    <style>
+      body {
+        background-color: aquamarine;
+        font-family: "Courier New", Courier, monospace;
+        color: #333;
+        margin: 20px 50px;
+      }
+
+      h1 {
+        border: thin solid #333;
+        /* text-align: center; */
+        display: inline-block;
+        background-color: #fff;
+        padding: 10px 15px;
+        font-weight: normal;
+        /* margin-left: 25px; */
+      }
+
+      div {
+        margin-bottom: 10px;
+      }
+
+      .special {
+        background-color: blanchedalmond;
+        font-style: italic;
+        padding: 1px;
+        text-transform: uppercase;
+      }
+
+      #videogames {
+        background-color: olivedrab;
+        color: brown;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Basics</h1>
+    <div>Do you like <span class="special">video games?!</span></div>
+    <div style="border-bottom: thick dotted blue"> <span id="special" class="special"> Video games </span> suck!</div>
+  </body>
+</html>
