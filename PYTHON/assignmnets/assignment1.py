@@ -1,5 +1,3 @@
-
-'''
 # Q1
 print("Net Pay Calculator")
 
@@ -15,12 +13,11 @@ netAmount = gross - taxAmountBeforeVacation + vacationPay
 print("Your gross amount is: ", round(gross, 2))
 print("Your tax amount before vacation is: ", round(taxAmountBeforeVacation, 2))
 print("Your net amount is: ", round(netAmount, 2))
-'''
 
-'''
+
+
 
 # Q2
-
 cents = int(input("Enter number of cents (0-99): "))
 
 quarters = cents // 25  # // is floor division. It divides and only keeps the whole number, ignoring any remainder.
@@ -36,15 +33,13 @@ pennies = cents
 
 print("Quarters: " + str(quarters), "Dimes: " + str(dimes), "Nickels: " + str(nickels), "Pennies: " + str(pennies), sep="\n")
 
-'''
-'''
+
 # Q3
 
 # Q3.1
 print("If you cant handle me, \n you at my worst then you \t dont deserve me at my \'best.\'")
-'''
 
-'''
+
 # Q3.2
 str1 = 'absherd centdanenz'
 
@@ -56,8 +51,8 @@ print(sheridan.endswith('n'))
 
 
 print(sheridan[0:2] + ' ' + sheridan[3:8])
-'''
 
+# Q3.4
 name = input("enter store manager name: ")
 firstSale = input("Enter first sales amount: ")
 secondSale = input("Enter second sales amount: ")
