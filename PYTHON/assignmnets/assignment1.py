@@ -7,14 +7,10 @@ taxPercent = int(input("Enter your tax percent: "))
 vacationPay = float(input("Enter your vacation pay: "))
 
 gross = hoursWorked * payRate
-taxAmountBeforeVacation = gross * payRate / 100
-netAmount = gross - taxAmountBeforeVacation + vacationPay
+taxAmonut = gross * taxPercent / 100
+netAmount = gross - taxAmonut + vacationPay
 
-print("Your gross amount is: ", round(gross, 2))
-print("Your tax amount before vacation is: ", round(taxAmountBeforeVacation, 2))
-print("Your net amount is: ", round(netAmount, 2))
-
-
+print('%s%.3f%s%.3f%s%.3f'%("gross:$",gross," \ntax before vacation:$",taxAmonut," \nnet amount:$",netAmount))
 
 
 # Q2
@@ -31,7 +27,7 @@ cents = cents % 5
 
 pennies = cents 
 
-print("Quarters: " + str(quarters), "Dimes: " + str(dimes), "Nickels: " + str(nickels), "Pennies: " + str(pennies), sep="\n")
+print('%s%5d%s%7d%s%5d%s%5d'%("Quarter:",quarters ,"\nDimes:",dimes,"\nNickels:",nickels,"\nPennies:",pennies,))
 
 
 # Q3
@@ -49,10 +45,19 @@ sheridan2 = sheridan[-1]
 print(sheridan)
 print(sheridan.endswith('n'))
 
-
 print(sheridan[0:2] + ' ' + sheridan[3:8])
+
+
+# Q3.3
+
+num1 = 5.29689
+num2 = 12.67908
+print('%20.3f%20.3f'%(num1,num2))
+
+
 
 # Q3.4
 name = input("enter store manager name: ")
-firstSale = input("Enter first sales amount: ")
-secondSale = input("Enter second sales amount: ")
+firstSale = float(input("Enter first sales amount: ")) # use the float before taking the user input
+secondSale = float(input("Enter second sales amount: "))
+print(f"{name}, has logged his first sales amount as ${firstSale:.2f} and his second sales amount as ${secondSale:.2f}") 
