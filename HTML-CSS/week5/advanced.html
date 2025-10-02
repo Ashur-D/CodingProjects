@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> WD- Advanced CSS</title>
+    <style>
+        
+        body {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #ccc;
+        }
+        
+        #outer {
+            border-radius: 10px;
+            box-shadow:rgba(0, 0, 0, 0.4) 10px 10px 10px; 
+            /* color x,y,blur */
+            border: thin solid #333;
+            padding: 15px;
+            width: 60%;
+            max-width:600px;
+            text-align: left;
+            display: inline-block;
+            background-color: #eee;
+            margin-top:20px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 30px;
+            font-family:'Courier New', Courier, monospace;
+            font-weight: normal;
+            text-align: center;
+            /* box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px; */
+        }
+        .button{
+            display: inline;
+            text-transform: uppercase;
+            border:1px purple solid;
+            background-color: violet;
+            padding:5px 10px;
+            text-decoration: none;
+            color: black;
+            border-radius: 5px;
+            box-shadow:rgba(0, 0, 0, 0.2) 5px 5px 5px;
+        }
+
+        /* :hover is a sudo class */
+        .button:hover{
+            /* background-color: rgb(207, 162, 207); */
+            opacity:80%;
+        }
+        a[href="https://spellsjs.com"]{
+            display:inline-block;
+            /* margin-top:50px; */
+            /* position: relative; */
+            /* position:absolute; */
+            /* bottom:10px; */
+        }
+        #holder{
+            /* border:thin dashed red; */
+            text-align:center;
+        }
+        /* li:nth-child(odd) */
+        li:nth-child(1){
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+    <h1> Advanced CSS </h1>
+    <p>
+        This an example of advanced selectors positoning and new styles
+        This still an example of advnaced selectors,postioning and new styles
+    </p>
+
+    <ul>
+        <li> My favourite band is - Pink zeppelin</li>
+        <li> My favourite fruit are - bananas </li>
+        <li> My favourite animal is a bat </li>
+    </ul>
+        <div id = "holder">
+            <a class = "button" href="https://spellsjs.com">Spells</a>
+        </div>
+    </div>
+    
+</body>
+</html>
