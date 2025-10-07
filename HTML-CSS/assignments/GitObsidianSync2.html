@@ -1,3 +1,13 @@
+<!-- There must be styles on at least FIVE different tags using a variety of the following:
+
+    selectors for a type of TAG
+    selectors set for an ID
+    selectors set with a CLASS and
+    styles put directly on a tag in the body of the HTML page
+
+You must have at least TEN different types of styles.  -->
+
+
 <!DOCTYPE html>
 <html lang="en" data-darkreader-mode="dynamic" data-darkreader-scheme="dark">
 
@@ -6,6 +16,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Setup Git sync SSH with Obsidian</title>
   <style>
+
+
+    /* I found out browsers by default set a custom margin and padding, so this will reset it all */
+    *{
+      margin:0px;
+      padding:0px;
+    }
+
     body {
       background-image: linear-gradient(#6441A5,#2a0845);
       background-repeat: no-repeat;
@@ -15,7 +33,7 @@
     h1 {
       font-family: monospace;
       font-weight: normal;
-      font-size: 50px;
+      font-size: 40px;
       text-align: center;
       color: #fff;
     }
@@ -23,16 +41,40 @@
     h2 {
       text-align: center;
       font-family:'Courier New', Courier, monospace;
-      font-size: 20px; 
+      font-size: 15px;
+      margin-top: 20px;
+    }
+
+    .button{
+      display: inline-block;
+      border: 1px #eee;
+      /* border: dotted #000; */
+      text-decoration: none;
+      background-color: orangered;
+      color: #fff;
+      width: 50px;
+      padding: 9px;
+      border-radius: 7px;
+      text-transform: lowercase;
+    }
+
+    a[href="https://git-scm.com/downloads"]{
+      display: inline-block;
     }
   </style>
 </head>
 
-<body>
+<body style="text-align: center;" >
   <div>
     <h1>How to setup Git sync SSH with Obsidian</h1>
     <div>
       <h2>before we start you MUST have the following installed</h2>
+    </div>
+    <div>
+      <ul>
+        <li style="margin-top: 20px;"> <a class="button" href="https://git-scm.com/downloads" target="git"> git  </a></li>
+        <li style="margin-top: 20px;"> <a class="button" href="https://obsidian.md/download" target="obsidian"> obsidian  </a></li>
+      </ul>
     </div>
   </div>
 </body>
