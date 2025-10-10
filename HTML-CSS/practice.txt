@@ -1,0 +1,90 @@
+CSS
+
+1: Cascading style sheets
+
+2: 3 advantages of CSS
+    - efficent
+    - consistent
+    - flexible
+
+3:  <style>
+        selector{style-name: val units;}
+    </style>
+
+
+4:
+
+all divs = divs{}
+some divs = .divs{}
+specific div = #div{}
+
+<div>
+<div class="divs">
+<div id="div">
+
+5: <div style = text-transform: uppercase; >
+
+
+6:  
+    <table>
+    <tr>
+        <td> 1 </td> <td> 2 </td>
+    </tr>
+    <table>
+
+7: .class{
+    text-decoration: none;
+    padding: 20px;
+    font-family: myfont;
+    font-size: 20px;
+    font-weight:
+    font-style:
+    background-color: black;
+    border: thick dotted red;
+    margin: 20px;
+    text-transform: uppercase;
+    display: inline/block/none abs/relative-px;
+    width
+    height
+    max-w
+    max-w
+}
+
+8: advanced styles:
+    - box-shadow
+    - border-radius
+    - opacity
+
+9: 
+
+a:hover{}
+tr:first-child{}
+tr:last-child{}
+tr:nth-child{}
+
+a[href=""]{}
+
+general format:
+
+multiple choice
+true and false
+matching
+short awnser/code
+
+HTML - what does this stand for type of questions?
+
+http - what does this mean?
+
+injecting css directly and tags
+
+5 url questions:
+1 url - https://
+1 virtual - using /
+3 relative - hi, hi/index.html, hi/
+
+div,p - all divs and paragraphs
+
+no more than 10 styles to know
+
+
+
