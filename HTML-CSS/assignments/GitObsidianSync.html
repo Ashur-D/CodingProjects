@@ -5,139 +5,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> How to setup Git sync SSH with Obsidian </title>
+
+
+    <style>
+        body {
+            background-image: linear-gradient(#124170, #26667F, #428d86);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-align: center;
+            color: #DEDED1;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 5px;
+            margin-top: 0px;
+            padding: 2px;
+            text-align: left;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
+            font-weight: normal;
+            font-size: 40px;
+            text-align: center;
+            color: #DEDED1;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 0px;
+        }
+
+        table,th,td {
+            border: 1px solid;
+            margin-top: 10px;
+            padding: 8px;
+            width: 50%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .box {
+            background-image: linear-gradient(#124170, #26667F);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            border-radius: 13px;
+            box-shadow: rgba(0, 0, 0, 0.4) 10px 10px 10px;
+            border: thin solid #1d5578;
+            padding: 15px;
+            width: 48%;
+            text-align: left;
+            display: inline-block;
+            margin: 15px;
+        }
+
+        .box:hover {
+            opacity: 0.9;
+            transform: translateY(-5px);
+            transition: transform 0.2s ease;
+        }
+
+        #smallbox {
+            background-image: linear-gradient(#124170, #26667F);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            border-radius: 13px;
+            box-shadow: rgba(0, 0, 0, 0.4) 10px 10px 10px;
+            border: thin solid #1d5578;
+            padding: 15px;
+            height: fit-content;
+            text-align: center;
+            display: inline-block;
+            background-color: #6441A5;
+            margin: 15px;
+            /* position: relative; */
+        }
+
+        #smallbox:hover {
+            opacity: 0.9;
+            transform: translateY(-5px);
+            transition: transform 0.2s ease;
+        }
+
+        .button {
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #DEDED1;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            margin-right: 15px;
+        }
+
+        .button:hover {
+            background-color: #26667F;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #428d86;
+        }
+
+        #special-link:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            margin-left: 5px;
+        }
+
+        code:hover {
+            background-color: #26667F;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 50px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
-
-<style>
-    body {
-        background-image: linear-gradient(#124170, #26667F, #428d86);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        text-align: center;
-        color: #DEDED1;
-        font-family: 'Times New Roman', Times, serif;
-    }
-
-    p {
-        line-height: 2;
-        margin-bottom: 5px;
-        margin-top: 0px;
-        padding: 10px;
-        text-align: justify;
-    }
-
-    h1 {
-        font-family: 'Gill Sans', Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
-        font-weight: normal;
-        font-size: 40px;
-        text-align: center;
-        color: #DEDED1;
-    }
-
-    h2 {
-        text-align: center;
-        margin: 0px;
-    }
-
-    table,th,td {
-        border: 1px solid;
-        margin-top: 10px;
-        padding: 8px;
-        width: 50%;
-        border-collapse: collapse;
-        text-align: center;
-    }
-
-    .box {
-        background-image: linear-gradient(#124170, #26667F);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        border-radius: 13px;
-        box-shadow: rgba(0, 0, 0, 0.4) 10px 10px 10px;
-        border: thin solid #3e487e;
-        padding: 15px;
-        width: 47%;
-        text-align: left;
-        display:inline-block;
-        margin: 15px;
-        color: #DEDED1;
-    }
-
-    .box:hover {
-        opacity: 90%;
-        transform: translateY(-5px);
-        transition: transform 0.2s ease;
-    }
-
-    .smallbox {
-        background-image: linear-gradient(#124170, #26667F);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        border-radius: 13px;
-        box-shadow: rgba(0, 0, 0, 0.4) 10px 10px 10px;
-        border: thin solid black;
-        padding: 15px;
-        height: fit-content;
-        text-align: center;
-        display: inline-block;
-        background-color: #6441A5;
-        margin: 15px;
-        /* position: relative; */
-        color: #DEDED1;
-    }
-
-    .smallbox:hover {
-        opacity: 90%;
-        transform: translateY(-5px);
-        transition: transform 0.2s ease;
-    }
-
-    .button {
-        padding: 5px 10px;
-        text-decoration: none;
-        color: #DEDED1;
-        border-radius: 5px;
-        margin-bottom: 20px;
-        margin-right: 20px;
-        /* background-color: #3d0277; */
-        /* box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 50px; */
-    }
-
-    .button:hover {
-        transform: translateY(-5px);
-        transition: transform 0.2s ease;
-        background-color: #26667F;
-        box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 5px;
-    }
-
-    a {
-        text-decoration: none;
-        color: #428d86;
-    }
-
-    #special-link:hover {
-        text-decoration: underline;
-    }
-
-    code {
-        margin-left: 5px;
-    }
-
-    code:hover {
-        background-color: #26667F;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 50px;
-        border-radius: 5px;
-    }
-</style>
 
 <body>
 
     <div>
 
         <div>
-            <h1 class="titlebox"> Setting up Git Sync in Obsidian </h1>
+            <h1> Setting up Git Sync in Obsidian </h1>
         </div>
 
-        <div class="smallbox">
+        <div id="smallbox">
 
             <div style="margin-bottom: 10px; text-decoration: underline;">
                 The links below must be installed before following:
@@ -148,7 +143,8 @@
                     width="15" height="15" alt="git logo"> </a>
 
             <a class="button" href="https://obsidian.md/download" target="obsidian"> Obsidian <img
-                    src="https://logo.svgcdn.com/l/obsidian-icon-8x.png" width="15" height="15"> </a>
+                    src="https://logo.svgcdn.com/l/obsidian-icon-8x.png" width="15" height="15" alt="obsidian logo">
+            </a>
         </div>
 
     </div>
@@ -163,9 +159,9 @@
         <p>
             1: Generating the SSH key <br>
             <code> ssh-keygen -t ed25519 -C "your_email@example.com"</code>
-        </p>
 
-        <ul style="margin-top: -10px;">
+
+        <ul style="margin-top: 5px;">
             <li>Next we are prompted to save the key somewhere, I like to just leave it how it is and press enter. </li>
             <li>You will then be asked for a passphrase, I also leave this blank but be careful as this is a security
                 concern. </li>
@@ -179,11 +175,11 @@
 
         <code> ssh-add ~/.ssh/id_ed25519</code> <br> <br>
 
-        4: Add your public SSH key to yout github account:
+        4: Add your public SSH key to your github account:
 
         <a id="special-link"
             href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
-            target="_blank"> Add SSH key to github account</a>
+            target="_blank" alt="link to setup ssh key"> Add SSH key to github account</a>
         </p>
     </div>
 
@@ -194,13 +190,15 @@
 
         <h2> 2 - Creating and cloning the repository </h2>
         <p>
-            1: Make a repository in github and make sure to add a <em> README.MD </em> <br>
+            1: Make a repository in github and make sure to add a <span style="font-style: italic;"> README.MD </span>
+            <br>
 
             2: Now on github copy the repository by SSH. <br>
 
-            3: In your terminal, CD into a folder where you want to have the repository, I like to use documnets. <br>
+            3: In your terminal, CD into a folder where you want to have the repository, I like to use documents.
+            <br>
 
-            4: Next we will git clone the SSH url we copied above. <br>
+            4: Next we will git clone the SSH url we copied above.
         </p>
     </div>
 
@@ -214,7 +212,7 @@
 
             2: Install the community plugin GIT and enable it, there are 2 things you need to change/enable.
 
-        <ul style="margin-top: -10px;">
+        <ul style="margin-top: 5px;">
             <li> Change the "Auto commit-and-sync interval (minutes)" to 1 minute </li>
             <li> Enable the pull on startup setting further down </li>
         </ul>
@@ -230,13 +228,12 @@
                 <td> Open github or the terminal and make a ".gitignore" file, Go into the file and add
                     ".obsidian/workspace.json" </td>
                 <td> If you dont want to sync all your settings and plugins you can just add the entire .obsidian folder
-                    to
-                    the .gitignore file </td>
+                    to the .gitignore file </td>
             </tr>
         </table> <br>
 
-        4: Lastly if you see any errors when trying to sync or pull on a diffrent device it may be becasue your
-        .gitconfig isnt set properly setup. Run the commands below on both devices and use your githib credentials.
+        4: Lastly if you see any errors when trying to sync or pull on a different device it may be because your
+        .gitconfig isnt set properly setup. Run the commands below on both devices and use your github credentials.
 
 
         <ul>
