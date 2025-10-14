@@ -92,6 +92,3 @@ injecting css directly and tags
 div,p - all divs and paragraphs
 
 no more than 10 styles to know
-
-
-
