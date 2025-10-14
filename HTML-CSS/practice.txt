@@ -11,6 +11,9 @@ CSS
         selector{style-name: val units;}
     </style>
 
+3.5: 
+
+HTML structure - HTMl / HEAD / TITLE / BODY
 
 4:
 
@@ -21,6 +24,10 @@ specific div = #div{}
 <div>
 <div class="divs">
 <div id="div">
+
+4.5:
+
+example use of a span tag  <p>My mother has <span style="color:blue">blue</span> eyes.</p> 
 
 5: <div style = text-transform: uppercase; >
 
