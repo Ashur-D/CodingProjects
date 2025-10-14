@@ -174,19 +174,13 @@
                 <p>Generating the SSH key</p>
                 <code> ssh-keygen -t ed25519 -C "your_email@example.com"</code>
                 <ul>
-                    <li>Next we are prompted to save the key somewhere, I like to just leave it how it is and press
-                        enter. </li>
-                    <li>You will then be asked for a passphrase, I also leave this blank but be careful as this is a
-                        security concern. </li>
+                    <li>Next we are prompted to save the key somewhere, I like to just leave it how it is and press enter. </li>
+                    <li>You will then be asked for a passphrase, I also leave this blank but be careful as this is a security concern. </li>
                 </ul>
             </li>
             <li>
                 <p>Start the ssh-agent in the background</p>
                 <code> eval "$(ssh-agent -s)" </code>
-            </li>
-            <li>
-                <p>Add your SSH private key to the ssh-agent.</p>
-                <code> ssh-add ~/.ssh/id_ed25519</code>
             </li>
             <li>
                 <p>Add your SSH private key to the ssh-agent.</p>
@@ -209,8 +203,7 @@
         <h2> 2 - Creating and cloning the repository </h2>
 
         <ol>
-            <li>Make a repository in github and make sure to add a <span style="font-style: italic;"> README.MD </span>
-            </li>
+            <li>Make a repository in github and make sure to add a <span style="font-style: italic;"> README.MD </span></li>
             <li>Now on github copy the repository by SSH.</li>
             <li>In your terminal, CD into a folder where you want to have the repository, I like to use documents.</li>
             <li>Next we will git clone the SSH url we copied above.</li>
@@ -240,24 +233,15 @@
                     <th> 3B </th>
                 </tr>
                 <tr>
-                    <td> Open github or the terminal and make a ".gitignore" file, Go into the file and add
-                        ".obsidian/workspace.json" </td>
-                    <td> If you dont want to sync all your settings and plugins you can just add the entire .obsidian
-                        folder
-                        to
-                        the .gitignore file </td>
+                    <td> Open github or the terminal and make a ".gitignore" file, Go into the file and add ".obsidian/workspace.json" </td>
+                    <td> If you dont want to sync all your settings and plugins you can just add the entire .obsidian folder to the .gitignore file </td>
                 </tr>
             </table>
 
-            <li>Lastly if you see any errors when trying to sync or pull on a different device it may be because your
-                .gitconfig isnt set properly setup. Run the commands below on both devices and use your github
-                credentials.</li>
+            <li>Lastly if you see any errors when trying to sync or pull on a different device it may be because your .gitconfig isnt set properly setup. Run the commands below on both devices and use your github credentials.</li>
 
-
-            <ul>
-                <li> git config --global user.email "your-email@example.com"</li>
-                <li> git config --global user.name "Your Name" </li>
-            </ul>
+            <code>git config --global user.email "your-email@example.com"</code> <br>
+            <code>git config --global user.name "Your Name"</code>
         </ol>
     </div>
 
