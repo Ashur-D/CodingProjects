@@ -31,13 +31,14 @@ example use of a span tag  <p>My mother has <span style="color:blue">blue</span>
 
 5: <div style = text-transform: uppercase; >
 
-
 6:  
     <table>
     <tr>
         <td> 1 </td> <td> 2 </td>
     </tr>
     <table>
+    # tr's are coloumns
+    # td's are rows
 
 7: .class{
     text-decoration: none;
@@ -71,6 +72,8 @@ tr:nth-child{}
 
 a[href=""]{}
 
+<a href="" alt=""> content </a>
+
 general format:
 
 multiple choice
@@ -93,5 +96,5 @@ div,p - all divs and paragraphs
 
 no more than 10 styles to know
 
-
+HTML general structure: <tag parameter=value> content </tag>
 
