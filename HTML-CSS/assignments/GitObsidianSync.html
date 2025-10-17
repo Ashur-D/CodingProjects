@@ -8,6 +8,8 @@
 
 
     <style>
+
+
         body {
             background-image: linear-gradient(#124170, #26667F, #428d86);
             background-repeat: no-repeat;
@@ -18,7 +20,7 @@
         }
 
         p {
-            line-height: 1.7;
+            line-height: 1.2;
             margin-bottom: 5px;
             margin-top: 0px;
             padding: 2px;
@@ -45,6 +47,15 @@
             width: 50%;
             border-collapse: collapse;
             text-align: center;
+        }
+
+        /* this will only affect li in ol's */
+        ol li{
+            margin: 5px 0 5px 0;
+        }
+
+        ul{
+            padding-left: 10px;
         }
 
         .box {
@@ -79,7 +90,7 @@
             text-align: center;
             display: inline-block;
             background-color: #6441A5;
-            margin: 15px;
+            margin: 5px 0 10px 0;
             /* position: relative; */
         }
 
@@ -113,7 +124,8 @@
         }
 
         code {
-            margin-left: 5px;
+            margin-left: 10px;
+            display: inline-block;
         }
 
         code:hover {
@@ -156,31 +168,31 @@
 
         <h2> 1 - Generating an SSH key </h2>
 
-        <p>
-            1: Generating the SSH key <br>
-            <code> ssh-keygen -t ed25519 -C "your_email@example.com"</code>
+        <ol>
 
+            <li>
+                <p>Generating the SSH key</p>
+                <code> ssh-keygen -t ed25519 -C "your_email@example.com"</code>
+                <ul>
+                    <li>Next we are prompted to save the key somewhere, I like to just leave it how it is and press enter. </li>
+                    <li>You will then be asked for a passphrase, I also leave this blank but be careful as this is a security concern. </li>
+                </ul>
+            </li>
+            <li>
+                <p>Start the ssh-agent in the background</p>
+                <code> eval "$(ssh-agent -s)" </code>
+            </li>
+            <li>
+                <p>Add your SSH private key to the ssh-agent.</p>
+                <code> ssh-add ~/.ssh/id_ed25519</code>
+            </li>
+            <li>
+                Add your public SSH key to your github account: <a id="special-link"
+                    href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
+                    target="_blank" alt="link to setup ssh key"> Add SSH key to github account</a>
+            </li>
 
-        <ul style="margin-top: 5px;">
-            <li>Next we are prompted to save the key somewhere, I like to just leave it how it is and press enter. </li>
-            <li>You will then be asked for a passphrase, I also leave this blank but be careful as this is a security
-                concern. </li>
-        </ul>
-
-
-        2: Start the ssh-agent in the background <br> <br>
-        <code> eval "$(ssh-agent -s)" </code> <br> <br>
-
-        3: Add your SSH private key to the ssh-agent. <br> <br>
-
-        <code> ssh-add ~/.ssh/id_ed25519</code> <br> <br>
-
-        4: Add your public SSH key to your github account:
-
-        <a id="special-link"
-            href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
-            target="_blank" alt="link to setup ssh key"> Add SSH key to github account</a>
-        </p>
+        </ol>
     </div>
 
 
@@ -189,17 +201,13 @@
     <div class="box">
 
         <h2> 2 - Creating and cloning the repository </h2>
-        <p>
-            1: Make a repository in github and make sure to add a <span style="font-style: italic;"> README.MD </span>
-            <br>
 
-            2: Now on github copy the repository by SSH. <br>
-
-            3: In your terminal, CD into a folder where you want to have the repository, I like to use documents.
-            <br>
-
-            4: Next we will git clone the SSH url we copied above.
-        </p>
+        <ol>
+            <li>Make a repository in github and make sure to add a <span style="font-style: italic;"> README.MD </span></li>
+            <li>Now on github copy the repository by SSH.</li>
+            <li>In your terminal, CD into a folder where you want to have the repository, I like to use documents.</li>
+            <li>Next we will git clone the SSH url we copied above.</li>
+        </ol>
     </div>
 
     <!-- ################################################################################################################################################################## -->
@@ -207,41 +215,34 @@
     <div class="box">
         <h2> 3 - Obsidian </h2>
 
-        <p>
-            1: Open obsidian and open the repository you cloned <br>
+        <ol>
+            <li>Open obsidian and open the repository you cloned</li>
 
-            2: Install the community plugin GIT and enable it, there are 2 things you need to change/enable.
+            <li>Install the community plugin GIT and enable it, there are 2 things you need to change/enable.</li>
 
-        <ul style="margin-top: 5px;">
-            <li> Change the "Auto commit-and-sync interval (minutes)" to 1 minute </li>
-            <li> Enable the pull on startup setting further down </li>
-        </ul>
+            <ul style="margin-top: 5px;">
+                <li> Change the "Auto commit-and-sync interval (minutes)" to 1 minute </li>
+                <li> Enable the pull on startup setting further down </li>
+            </ul>
 
-        3: If you want to sync all your settings and plugins refer to 3A, if not refer to 3B
+            <li>If you want to sync all your settings and plugins refer to 3A, if not refer to 3B</li>
 
-        <table>
-            <tr>
-                <th> 3A </th>
-                <th> 3B </th>
-            </tr>
-            <tr>
-                <td> Open github or the terminal and make a ".gitignore" file, Go into the file and add
-                    ".obsidian/workspace.json" </td>
-                <td> If you dont want to sync all your settings and plugins you can just add the entire .obsidian folder
-                    to
-                    the .gitignore file </td>
-            </tr>
-        </table> <br>
+            <table>
+                <tr>
+                    <th> 3A </th>
+                    <th> 3B </th>
+                </tr>
+                <tr>
+                    <td> Open github or the terminal and make a ".gitignore" file, Go into the file and add ".obsidian/workspace.json" </td>
+                    <td> If you dont want to sync all your settings and plugins you can just add the entire .obsidian folder to the .gitignore file </td>
+                </tr>
+            </table>
 
-        4: Lastly if you see any errors when trying to sync or pull on a different device it may be because your
-        .gitconfig isnt set properly setup. Run the commands below on both devices and use your github credentials.
+            <li>Lastly if you see any errors when trying to sync or pull on a different device it may be because your .gitconfig isnt set properly setup. Run the commands below on both devices and use your github credentials.</li>
 
-
-        <ul>
-            <li> git config --global user.email "your-email@example.com"</li>
-            <li> git config --global user.name "Your Name" </li>
-        </ul>
-        </p>
+            <code>git config --global user.email "your-email@example.com"</code> <br>
+            <code>git config --global user.name "Your Name"</code>
+        </ol>
     </div>
 
 
