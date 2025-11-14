@@ -4,7 +4,6 @@ The class has 5 students, each having 4 grades of their completed assignments
 The program uses a netsted for loop to solve it
 '''
 
-asCount = 0 # init a counter
 
 for s in range(1,6):
     total = 0

@@ -21,37 +21,36 @@ Your program should validate the user inputs, the option and the two numbers so 
 
 Your program should ignore the case (upper and lower) in which the user enter Yes or No in VI.
 """
-# repeat = 'yes'
-# while repeat == 'yes':
-#     print("1. Test your addition skills \n2. Test your subtraction skills \n3. Test your multiplication skills \n4. Test your exponentitaion skills")
+repeat = 'yes'
+while repeat == 'yes':
+    print("1. Test your addition skills \n2. Test your subtraction skills \n3. Test your multiplication skills \n4. Test your exponentitaion skills")
 
-#     num1 = int(input("Enter a number: "))
-#     num2 = int(input("Enter a second number: "))
-#     while num1 and num2 not in range(-99,99):
-#         num1 = int(input("please try again for the first number: "))
-#         num2 = int(input("please try again for the second number: "))
+    num1 = int(input("Enter a number: "))
+    num2 = int(input("Enter a second number: "))
+    while (num1 < -99 or num1 > 99) or (num2 < -99 or num2 > 99):
+        num1 = int(input("please try again for the first number: "))
+        num2 = int(input("please try again for the second number: "))
 
-#     choice = int(input("Select from one of the 4 options above with the corresponding number: "))
-#     while choice not in range(1,5):
-#         choice = int(input("please select again for a number between 1 and 4: "))
+    choice = int(input("Select from one of the 4 options above with the corresponding number: "))
+    while choice < 1 or choice > 4:
+        choice = int(input("please select again for a number between 1 and 4: "))
 
-#     if choice == 1:
-#         num3 = num1 + num2
-#     elif choice == 2:
-#         num3 = num1 - num2
-#     elif choice == 3:
-#         num3 = num1 * num2
-#     else:
-#         num3 = num1 ** num2
+    if choice == 1:
+        num3 = num1 + num2
+    elif choice == 2:
+        num3 = num1 - num2
+    elif choice == 3:
+        num3 = num1 * num2
+    else:
+        num3 = num1 ** num2
 
 
-#     guess = int(input('Enter your awnser: '))
-#     if guess == num3:
-#         print('Congratulations, you guessed the correct answer!',num3)
-#     else:
-#         print('Incorrect')
-#     repeat = input('Would you like to play again? ').lower()
-
+    guess = int(input('Enter your awnser: '))
+    if guess == num3:
+        print('Congratulations, you guessed the correct answer!',num3)
+    else:
+        print('Incorrect')
+    repeat = input('Would you like to play again? ').lower()
 
 
 
@@ -72,64 +71,44 @@ v#	miles		gallons 	mpg
 5 	666.0 		5.0 		?
 
 """
-# vList = []
-# milesList = []
-# gallonsList = []
-# mpgList = []
-
+# vehicle_num = []
+# miles_list = []
+# gallons_list = []
+# mpg_list = []
 
 # num_vehicles = int(input("Enter the number of vehicles: "))
 
-# i = 0
-# while i < num_vehicles:
-#     print(f"\nVehicle #{i+1}")
-#     break
+# counter = 0
+# while counter < num_vehicles:
+#     print('\nVehicle #'+str(counter+1))
 
-# miles = 0
-# while miles <= 0:
-#     miles = float(input("Enter the amount of files driven: "))
-#     if miles <= 0:
-#         print("please use positive numbers, try again. ")
+#     miles = 0
+#     while miles <= 0:
+#         miles = float(input("Enter miles driven: "))
+#         if miles <= 0:
+#             print("Miles must be a positive number. Try again.")
 
+#     gallons = 0
+#     while gallons <= 0:
+#         gallons = float(input("Enter gallons used: "))
+#         if gallons <= 0:
+#             print("Gallons must be a positive number. Try again.")
 
-vehicle_num = []
-miles_list = []
-gallons_list = []
-mpg_list = []
+#     mpg = miles / gallons
 
-num_vehicles = int(input("Enter the number of vehicles: "))
+#     vehicle_num.append(counter + 1)
+#     miles_list.append(miles)
+#     gallons_list.append(gallons)
+#     mpg_list.append(mpg)
 
-counter = 0
-while counter < num_vehicles:
-    print('\nVehicle #'+str(counter+1))
-
-    miles = 0
-    while miles <= 0:
-        miles = float(input("Enter miles driven: "))
-        if miles <= 0:
-            print("Miles must be a positive number. Try again.")
-
-    gallons = 0
-    while gallons <= 0:
-        gallons = float(input("Enter gallons used: "))
-        if gallons <= 0:
-            print("Gallons must be a positive number. Try again.")
-
-    mpg = miles / gallons
-
-    vehicle_num.append(counter + 1)
-    miles_list.append(miles)
-    gallons_list.append(gallons)
-    mpg_list.append(mpg)
-
-    counter += 1
+#     counter += 1
 
 
-print("\n%-3s\t%-10s\t%-10s\t%-10s" % ("v#", "miles", "gallons", "mpg"))
-print("***\t**********\t**********\t**********")
+# print("\n%-3s\t%-10s\t%-10s\t%-10s" % ("v#", "miles", "gallons", "mpg"))
+# print("***\t**********\t**********\t**********")
 
-counter2 = 0
-while counter2 < num_vehicles:
-    print("%-3d\t%-10.1f\t%-10.1f\t%-10.2f" %
-          (vehicle_num[counter2], miles_list[counter2], gallons_list[counter2], mpg_list[counter2]))
-    counter2 += 1
+# counter2 = 0
+# while counter2 < num_vehicles:
+#     print("%-3d\t%-10.1f\t%-10.1f\t%-10.2f" %
+#           (vehicle_num[counter2], miles_list[counter2], gallons_list[counter2], mpg_list[counter2]))
+#     counter2 += 1
