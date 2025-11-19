@@ -1,0 +1,61 @@
+/*Description
+
+Individually, create a portfolio site about yourself. Use HTML and CSS that we have learned in class and in particular, use the HTML 5 semantic tags.
+Requirements
+
+The site must be posted to your Sheridan server in a one-secret-word folder (tell me) and meet the following requirements:
+
+    the folder should have:
+        an index page introducing yourself
+        a second page showing a hobby of yours
+        a second folder with a third page about your goals
+        an images folder to hold all images
+    there must be at least one image on each page
+    all links should be relative except external absolute links*/
+
+
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    width: 80%;
+    min-width: 320px;
+    max-width: 1000px;
+    background-color:bisque;
+    margin: 20px auto;
+    height: 100%;
+    padding: 30px;
+    box-shadow: rgba(0,0,0, .5) 0px 0px 50px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+header h1{
+    margin:0;
+}
+
+header p {
+    margin: 10px 0 20px;
+}
+
+header nav{
+    margin-top: 10px;
+}
+
+header nav a{
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+header nav a:hover{
+    text-decoration: underline;
+}
+
+section h2{
+    text-align: center;
+}
