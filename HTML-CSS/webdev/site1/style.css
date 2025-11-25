@@ -1,0 +1,10 @@
+body{
+    background-color: antiquewhite;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header,footer,nav,main{
+    border: thin solid purple;
+    padding:20px;
+    margin-bottom:10px;
+}

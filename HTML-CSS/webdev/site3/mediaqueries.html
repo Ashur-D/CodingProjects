@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Web Dev - Media Queries - Adaptive / Responsive </title>
+
+
+    <style>
+
+        /* reponsive design with % and vw */
+
+    #small{
+        display: none;
+    }
+
+    #big{
+        display: none;
+    }
+
+    #medium{
+        display: none;
+    }
+
+    div{
+        border: thick solid;
+        background-color: antiquewhite;
+        padding:5%;
+        /* font-size: 2em; */
+    }
+
+    body{
+        margin: 50px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 30px;
+        padding:5%;
+        font-size: 5vw; 
+    }
+
+    /* Media Queries gives responsive design */
+    /* reposive is to scale and wrap - use % em vw*/
+    /* adaptive is to change the design */
+
+
+    @media all and (max-width: 640px){
+        #small {display: block;}
+        #big {display: none;}
+        #medium {display: none;}
+    }
+
+    @media all and (min-width: 641px){
+        #small {display: none;}
+        #big {display: none;}
+        #medium {display: block;}
+
+    }
+
+    @media all and (min-width: 1024px){
+        #small {display: none;}
+        #big {display: block;}
+        #medium {display: none;}
+
+    }    
+
+
+
+</style>
+
+</head>
+
+<body>
+    
+    <div id="small"> Mobile </div>
+    <div id="big"> Desktop </div>
+    <div id="medium"> Tablet </div>
+
+</body>
+</html>
