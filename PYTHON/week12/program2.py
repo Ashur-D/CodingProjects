@@ -1,6 +1,3 @@
-from os import name
-
-
 def processGrades2(grades_count):
     count = 0
     theSum = 0
@@ -8,10 +5,10 @@ def processGrades2(grades_count):
 
     while count < grades_count:
         grade = float(input('Enter a grade: '))
-        if theSum >= 50 and grade <= 100:
-            theSum += grade
-            countPassing += 1
-        count += 1
+        if grade >= 50 and grade <= 100:
+            theSum += grade # running total
+            countPassing += 1 # good counter
+        count += 1 # general counter
     return theSum, countPassing
 
 
