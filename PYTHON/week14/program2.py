@@ -59,6 +59,6 @@ while flag.lower() == 'y':
     else:
         print('error')
     flag = input('Would you like to keep going?: ').lower()
+print('bye!')
 
 ###############################################################################################
-
