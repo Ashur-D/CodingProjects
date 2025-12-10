@@ -16,56 +16,56 @@
 • Make sure to ask the user if they want to run the application again.
 '''
 
-# def calcDiscounts(customerType,totalValue):
-#     discount = 0.0
-#     if customerType == 'R':
-#         if totalValue >= 250:
-#             discount = 0.25
-#         elif totalValue >= 100 and totalValue < 250:
-#             discount = 0.10
-#         else:
-#             discount = 0.05
-#     elif customerType == 'C':
-#         if totalValue >= 250:
-#             discount = 0.30
-#         elif totalValue < 250:
-#             discount = 0.20
-#     else:
-#         discount = 0
-#     return discount
+def calcDiscounts(customerType,totalValue):
+    discount = 0.0
+    if customerType == 'R':
+        if totalValue >= 250:
+            discount = 0.25
+        elif totalValue >= 100 and totalValue < 250:
+            discount = 0.10
+        else:
+            discount = 0.05
+    elif customerType == 'C':
+        if totalValue >= 250:
+            discount = 0.30
+        elif totalValue < 250:
+            discount = 0.20
+    else:
+        discount = 0
+    return discount
 
-# def main():
-#     repeat = 'YES'
+def main():
+    repeat = 'YES'
 
-#     while repeat:
-#         count = 0
-#         user = int(input('Enter a number of customers: '))
-#         while user < 0:
-#             user = int(input('Please try again: '))
+    while repeat:
+        count = 0
+        user = int(input('Enter a number of customers: '))
+        while user < 0:
+            user = int(input('Please try again: '))
 
-#         # for i in range(user)
-#         while count < user:
-#             amount = float(input(f'Enter the amount customer {count+1} spent: '))
-#             if amount < 0:
-#                 amount = float(input(f'Please try again and enter the amount customer{count+1} spent: '))
+        # for i in range(user)
+        while count < user:
+            amount = float(input(f'Enter the amount customer {count+1} spent: '))
+            if amount < 0:
+                amount = float(input(f'Please try again and enter the amount customer{count+1} spent: '))
 
-#             customer_type = input(f'Enter the customer type for customer {count+1}: ').upper()
-#             if customer_type != 'C' and customer_type != 'R':
-#                 customer_type = input(f'Please try again and enter the customer type for customer {count+1}: ').upper()
+            customer_type = input(f'Enter the customer type for customer {count+1}: ').upper()
+            if customer_type != 'C' and customer_type != 'R':
+                customer_type = input(f'Please try again and enter the customer type for customer {count+1}: ').upper()
 
-#             customerDiscount = calcDiscounts(customer_type,amount)
-#             subTotal = amount * customerDiscount
-#             total = amount - subTotal
-#             # print(f'Customer {customer_type} your subtotal was {amount}, your new total is {total} after a {customerDiscount * 100} discount')
-#             print('Customer %s'%(customer_type),'your subtotal was $%.2f'%(amount),'your new total is $%.2f'%(total),'after a %.0f'%(customerDiscount*100),'% discount')
-#             count += 1
+            customerDiscount = calcDiscounts(customer_type,amount)
+            subTotal = amount * customerDiscount
+            total = amount - subTotal
+            # print(f'Customer {customer_type} your subtotal was {amount}, your new total is {total} after a {customerDiscount * 100} discount')
+            print('Customer %s'%(customer_type),'your subtotal was $%.2f'%(amount),'your new total is $%.2f'%(total),'after a %.0f'%(customerDiscount*100),'% discount')
+            count += 1
 
-#         repeat = input('Would you like to run the application again?: ').upper()
-#         if repeat != 'YES':
-#             break
+        repeat = input('Would you like to run the application again?: ').upper()
+        if repeat != 'YES':
+            break
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
 
 ############################################################################################################
 '''
