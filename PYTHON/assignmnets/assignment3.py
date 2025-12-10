@@ -114,6 +114,8 @@ def main():
 if __name__ == '__main__':
     main()
 
+
+
 '''
 totalSum = sumPop(pop),minPop(pop),maxPop(pop),avgPop(pop) # this turns it into a tuple
 
